@@ -4,11 +4,13 @@
     <meta charset="UTF-8">
     <title>Webpack Example | Watson developer Cloud JS SDK </title>
   <style type=text/css>
-    textarea {
-      height: auto;
-      min-height: 300px;
+    html,
+    body {
+      padding: 0;
+      margin: 0;
+    }
+    #canvas {
       width: 100%;
-      max-width: 800px;
     }
   </style>
 </head>
@@ -22,6 +24,12 @@
 <p>Result:</p>
 <pre><code id="output"></code></pre>
 <p><button id="analyze-btn">Analyze</button></p>
+
+ <!-- canvas -->
+ <canvas id="canvas"></canvas>
+
+<!-- imports -->
+<script src="/scarlett-framework.browser.min.js"></script>
 
 <script src="/bundle.js"></script>
 </body>

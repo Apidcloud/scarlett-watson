@@ -11,6 +11,7 @@
 // * fetch() is a modern version of XMLHttpRequest. A pollyfill is available for older browsers: https://github.com/github/fetch
 
 var recognizeMic = require('watson-speech/speech-to-text/recognize-microphone');
+var updateText = require('./scarlett-game');
 
 var btn = document.getElementById('analyze-btn');
 var input = document.getElementById('input');
@@ -33,7 +34,9 @@ function recognizeSpeech(token) {
     format: false // optional - performs basic formatting on the results such as capitals an periods
   });
   stream.on('data', (data) => {
-    output.innerHTML = data.alternatives[0].transcript
+    var transcript = data.alternatives[0].transcript;
+    output.innerHTML = transcript;
+    updateText(transcript);
   });
   stream.on('error', function(err) {
     if (err) {
