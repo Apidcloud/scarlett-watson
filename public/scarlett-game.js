@@ -1,6 +1,8 @@
-var DISPLAY_WIDTH = 1280,
+var CustomMSDFShader = require("./customMSDFShader");
+
+var DISPLAY_WIDTH = 1920,
   HALF_DISPLAY_WIDTH = DISPLAY_WIDTH / 2;
-var DISPLAY_HEIGHT = 720,
+var DISPLAY_HEIGHT = 500,
   HALF_DISPLAY_HEIGHT = DISPLAY_HEIGHT / 2;
 
 var Game = SC.Game;
@@ -31,14 +33,15 @@ game.init();
 var gameScene = new GameScene({
   name: "my game scene 1",
   game: game,
-  backgroundColor: Color.fromRGB(29, 25, 35)
+  //backgroundColor: Color.fromHex("#403F63FF")
+  backgroundColor: Color.fromHex("#8DAABAFF")
 });
 
 GameManager.activeProjectPath = "http://localhost:3000/";
 
 ContentLoader.loadAll({
   images: [
-    { path: "assets/background.jpg", alias: "background" }
+    { path: "assets/triangle-background.png", alias: "background" }
   ]
 }).then(async function(result) {
   var images = result[0];
@@ -49,40 +52,35 @@ ContentLoader.loadAll({
   game.changeScene(gameScene);
   game.setVirtualResolution(DISPLAY_WIDTH, DISPLAY_HEIGHT);
 
-  await initializeTextDependencies("assets/fnt/arialbd.ttf");
+  await initializeTextDependencies("assets/fnt/Roboto-Regular.ttf");
 });
 
 gameScene.initialize = function() {
-  backgroundTex = new Texture2D(ContentLoader.getImage("background"));
+  //backgroundTex = new Texture2D(ContentLoader.getImage("background"));
 
-  var background = new Sprite({ texture: backgroundTex });
-  background.setWrapMode(WrapMode.REPEAT);
+  //var background = new Sprite({ texture: backgroundTex });
+  //gameScene.addGameObject(background);
 };
 
 async function initializeTextDependencies(fontPath) {
   text = new Text({
     fontFilePath: fontPath,
-    text: "Lorem\r\nipsum\r\ndolore"
+    text: "Lorem\r\nipsum\r\ndolore",
+    shader: new CustomMSDFShader()
   });
 
   if (await text.setFontPathAsync(fontPath)) {
-    text.transform.setPosition(-100, -180);
-    text.setColor(Color.fromRGBA(232, 78, 64, 1.0));
-
-    //var data = text.objectify();
-
-    //console.log(data);
-
-    //text.unload();
-
-    //Text.restore(data).then(restoredText => {
+    text.transform.setPosition(-125, -180);
+    //text.setColor(Color.fromHex("#C36891FF"));
+    text.setColor(Color.fromHex("#F74356FF"));
     newText = text;
-    newText.setDropShadowEnabled(false);
+    //newText.getStroke().setColor(Color.fromRGBA(40, 1, 1, 1.0));
+    //newText.getStroke().setSize(6.0);
     newText.setStrokeEnabled(false);
+    newText.setDropShadowEnabled(false);
     newText.setAlign(Text.AlignType.CENTER);
-    //newText.setFontSize();
-
-    //});
+    newText.setGamma(4.0);
+    newText.setFontSize(110);
   }
 }
 
