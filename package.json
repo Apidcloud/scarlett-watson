@@ -1,0 +1,19 @@
+{
+  "name": "scarlett-watson",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "Apidcloud <luisapidcloud@hotmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "5.0.0",
+    "express": "4.16.2",
+    "shebang-loader": "0.0.1",
+    "watson-developer-cloud": "3.0.6",
+    "webpack": "3.11.0",
+    "webpack-dev-middleware": "2.0.5"
+  }
+}
