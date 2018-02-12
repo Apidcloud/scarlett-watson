@@ -52,7 +52,7 @@ ContentLoader.loadAll({
   game.changeScene(gameScene);
   game.setVirtualResolution(DISPLAY_WIDTH, DISPLAY_HEIGHT);
 
-  await initializeTextDependencies("assets/fnt/Roboto-Regular.ttf");
+  await initializeTextDependencies("assets/fnt/OpenSans-Regular.ttf");
 });
 
 gameScene.initialize = function() {
@@ -65,14 +65,14 @@ gameScene.initialize = function() {
 async function initializeTextDependencies(fontPath) {
   text = new Text({
     fontFilePath: fontPath,
-    text: "Lorem\r\nipsum\r\ndolore",
+    text: "How cool is this?",
     shader: new CustomMSDFShader()
   });
 
   if (await text.setFontPathAsync(fontPath)) {
-    text.transform.setPosition(-125, -180);
+    text.transform.setPosition(-390, -180);
     //text.setColor(Color.fromHex("#C36891FF"));
-    text.setColor(Color.fromHex("#F74356FF"));
+    text.setColor(Color.fromHex("#5b1928FF"));
     newText = text;
     //newText.getStroke().setColor(Color.fromRGBA(40, 1, 1, 1.0));
     //newText.getStroke().setSize(6.0);
@@ -82,7 +82,7 @@ async function initializeTextDependencies(fontPath) {
     newText.setGamma(4.0);
     newText.setFontSize(110);
   }
-}
+};
 
 gameScene.lateUpdate = function(delta) {
   if (Keyboard.isKeyDown(Keys.Add)) {
@@ -92,10 +92,43 @@ gameScene.lateUpdate = function(delta) {
   }
 };
 
-gameScene.lateRender = function(delta) {
-  if (newText) {
-    newText.render(delta, this._spriteBatch);
+var time = 0;
+var duration = 5;
+var step = 0;
+
+var fixed = [
+  "Using IBM Watson's Cloud Speech to Text service",
+  "and displaying its result with Scarlett's Framework MSDF Font Rendering"
+];
+
+function nextStep(step){
+  if (step >= fixed.length){
+    return -1;
   }
+  newText.setText(fixed[step++]);
+  return step;
+}
+
+gameScene.render = function(delta) {
+  if (!newText) {
+    return;
+  }
+
+  time += delta;
+  var iGlobalTime = time;
+  var animate = time / duration;
+  if (time > duration){
+    time = 0;
+    step = nextStep(step);
+  }
+
+  SC.GameManager.activeGame.getShaderManager().useShader(newText.getShader());
+  var gl = SC.GameManager.renderContext.getContext();
+
+  gl.uniform1f(newText.getShader().uniforms.iGlobalTime._location, iGlobalTime);
+  gl.uniform1f(newText.getShader().uniforms.animate._location, animate);
+
+  newText.render(delta, this._spriteBatch);
 };
 
 module.exports = function updateText(str) {
