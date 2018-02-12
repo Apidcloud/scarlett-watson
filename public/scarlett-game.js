@@ -37,7 +37,7 @@ var gameScene = new GameScene({
   backgroundColor: Color.fromHex("#8DAABAFF")
 });
 
-GameManager.activeProjectPath = "http://localhost:3000/";
+GameManager.activeProjectPath = "/";
 
 ContentLoader.loadAll({
   images: [

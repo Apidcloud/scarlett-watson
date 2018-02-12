@@ -44,7 +44,7 @@ app.use('/api/speech-to-text/token', function(req, res) {
   });
 });
 
-var port = process.env.PORT || process.env.VCAP_APP_PORT || 3000;
+var port = process.env.PORT || process.env.VCAP_APP_PORT || 5000;
 app.listen(port, function() {
-  console.log('Watson webpack example server running at http://localhost:%s/', port);
+  console.log('Node app is running on port', port);
 });

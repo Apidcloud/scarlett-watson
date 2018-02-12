@@ -21,7 +21,8 @@ var output = document.getElementById('output');
  * @return {Promise<String>} returns a promise that resolves to a string token
  */
 function getToken() {
-  return fetch('http://localhost:3000/api/speech-to-text/token').then(function(response) {
+  return fetch('/api/speech-to-text/token').then(function(response) {
+    console.log(response);
     return response.text();
   }); 
 }
