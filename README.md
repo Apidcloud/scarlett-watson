@@ -1,6 +1,6 @@
 # Scarlett Watson
 
-![](https://imgur.com/jwGZK8f.png)
+![alt tag](https://imgur.com/jwGZK8f.png)
 
 [Live Demo](https://scarlett-watson.herokuapp.com/)
 (It might be unavaible due to Heroku's free plan's 30min inactivity)
