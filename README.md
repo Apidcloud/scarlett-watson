@@ -1,6 +1,6 @@
 # Scarlett Watson
 
-<img src="WatsonSpeech+ScarlettMSDF.gif?raw=true" width="500px">
+<img src="WatsonSpeech+ScarlettMSDF.gif?raw=true" width="900px">
 
 [Live Demo](https://scarlett-watson.herokuapp.com/)
 (It might be unavaible due to Heroku's free plan's 30min inactivity)
