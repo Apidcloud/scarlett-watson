@@ -11,6 +11,7 @@ var webpackConfig = require('./webpack.config');
 
 var compiler = webpack(webpackConfig);
 
+
 app.use(
   webpackDevMiddleware(compiler, {
     publicPath: '/' // Same as `output.publicPath` in most cases.
