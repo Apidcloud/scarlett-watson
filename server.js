@@ -1,6 +1,7 @@
 'use strict';
 var express = require('express'); // eslint-disable-line node/no-missing-require
 var app = express();
+var dotenv = require('dotenv');
 var watson = require('watson-developer-cloud');
 
 // bundle the code
@@ -21,6 +22,10 @@ app.use(function(req, res, next) {
   res.header("Content-Security-Policy", "font-src 'self' data:")
   next();
 });
+
+// load environment properties from a .env file (local dev only)
+// create a .env file containing SPEECH_TO_TEXT_USERNAME or other variables
+dotenv.load({ silent: true });
 
 // For local development, specify the username and password or set env properties
 var ltAuthService = new watson.AuthorizationV1({

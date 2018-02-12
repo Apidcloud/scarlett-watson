@@ -1,6 +1,7 @@
 build
 .opt-in
 .opt-out
+.env
 
 ### Node template
 # Logs
