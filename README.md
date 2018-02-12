@@ -8,7 +8,7 @@ Live Demos:
 
 Both should work even in smartphones. Tested with Firefox and Google Chrome. Safari doesn't seem to handle the microphone permissions very well though.
 
-This example connects directly from your browser to the IBM Watson Cloud Speech to Text service and its output with [Scarlett's WebGL Framework](https://github.com/scarlettgamestudio/scarlett-framework) (MSDF) BMFont Text Rendering. 
+This example connects directly from your browser to the IBM Watson Cloud Speech to Text service and shows its output with [Scarlett's WebGL Framework](https://github.com/scarlettgamestudio/scarlett-framework) (MSDF) BMFont Text Rendering. 
 
 ## Basic Setup (without Speech to Text)
 
