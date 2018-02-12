@@ -2,8 +2,9 @@
 
 <img src="WatsonSpeech+ScarlettMSDF.gif?raw=true" width="900px">
 
-[Live Demo](https://scarlett-watson.herokuapp.com/)
-(It might be unavaible due to Heroku's free plan's 30min inactivity)
+Live Demos:
+- [Zeit](https://scarlett-watson.now.sh/)
+- [Heroku](https://scarlett-watson.herokuapp.com/) - might be unavaible due to free plan's 30min inactivity
 
 This example connects directly from your browser to the IBM Watson Cloud Speech to Text service and its output with [Scarlett's WebGL Framework](https://github.com/scarlettgamestudio/scarlett-framework) (MSDF) BMFont Text Rendering. 
 
