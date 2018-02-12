@@ -6,6 +6,8 @@ Live Demos:
 - [Zeit](https://scarlett-watson.now.sh/)
 - [Heroku](https://scarlett-watson.herokuapp.com/) - might be unavaible due to free plan's 30min inactivity
 
+Both should work even in smartphones. Tested with Firefox and Google Chrome. Safari doesn't seem to handle the microphone permissions very well though.
+
 This example connects directly from your browser to the IBM Watson Cloud Speech to Text service and its output with [Scarlett's WebGL Framework](https://github.com/scarlettgamestudio/scarlett-framework) (MSDF) BMFont Text Rendering. 
 
 ## Basic Setup (without Speech to Text)
