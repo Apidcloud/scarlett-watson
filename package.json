@@ -1,7 +1,7 @@
 {
   "name": "scarlett-watson",
   "version": "1.0.0",
-  "description": "",
+  "description": "This repo combines IBM Watson Cloud Speech to Text service renders its output as Scarlett's WebGL Framework (MSDF) BMFont Text",
   "engines": {
     "node": "8.6.0"
   },
@@ -19,5 +19,9 @@
     "watson-speech": "0.34.1",
     "webpack": "3.11.0",
     "webpack-dev-middleware": "2.0.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Apidcloud/scarlett-watson.git"
   }
 }
