@@ -13,7 +13,7 @@
 var recognizeMic = require('watson-speech/speech-to-text/recognize-microphone');
 var updateText = require('./scarlett-game');
 
-var btn = document.getElementById('analyze-btn');
+var btn = document.getElementById('activate-btn');
 var input = document.getElementById('input');
 var output = document.getElementById('output');
 
