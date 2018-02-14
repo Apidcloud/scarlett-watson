@@ -1,6 +1,7 @@
 'use strict';
 
 module.exports = {
+  mode: "production",
   devtool: 'source-map',
   entry: './public/client.js',
   output: {
