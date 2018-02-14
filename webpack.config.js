@@ -25,6 +25,16 @@ module.exports = {
       {
         test: /JSONStream/,
         use: 'shebang-loader'
+      },
+      {
+        test: /\.(glsl|frag|vert)$/, 
+        loader: 'raw-loader', 
+        exclude: /node_modules/
+      },
+      {
+        test: /\.(glsl|frag|vert)$/, 
+        loader: 'scarlett-glslify-loader', 
+        exclude: /node_modules/
       }
     ]
   }

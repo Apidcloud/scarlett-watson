@@ -1,4 +1,4 @@
-var CustomMSDFShader = require("./customMSDFShader");
+var CustomMSDFShader = require("./shaders/customMSDFShader");
 
 var DISPLAY_WIDTH = 1920,
   HALF_DISPLAY_WIDTH = DISPLAY_WIDTH / 2;
@@ -55,11 +55,10 @@ ContentLoader.loadAll({
   await initializeTextDependencies("assets/fnt/OpenSans-Regular.ttf");
 });
 
-gameScene.initialize = function() {
-  //backgroundTex = new Texture2D(ContentLoader.getImage("background"));
+var gl = null;
 
-  //var background = new Sprite({ texture: backgroundTex });
-  //gameScene.addGameObject(background);
+gameScene.initialize = function() {
+  gl = SC.GameManager.renderContext.getContext();
 };
 
 async function initializeTextDependencies(fontPath) {
@@ -94,17 +93,23 @@ gameScene.lateUpdate = function(delta) {
 
 var time = 0;
 var duration = 5;
-var step = 0;
-
+var step = 1;
 var fixed = [
+  "How cool is this?",
   "Using IBM Watson's Cloud Speech to Text service",
-  "and displaying its result with Scarlett's Framework MSDF Font Rendering"
+  "and displaying its result with Scarlett's Framework MSDF Font Rendering",
+  "Click 'Activate' button and speak to your microphone!"
 ];
 
+var btn = document.getElementById('activate-btn');
+
 function nextStep(step){
-  if (step >= fixed.length){
+  if (step >= fixed.length || step < 0){
     return -1;
+  } else if (step === fixed.length - 1) {
+    btn.disabled = false;
   }
+
   newText.setText(fixed[step++]);
   return step;
 }
@@ -121,9 +126,6 @@ gameScene.render = function(delta) {
     time = 0;
     step = nextStep(step);
   }
-
-  SC.GameManager.activeGame.getShaderManager().useShader(newText.getShader());
-  var gl = SC.GameManager.renderContext.getContext();
 
   gl.uniform1f(newText.getShader().uniforms.iGlobalTime._location, iGlobalTime);
   gl.uniform1f(newText.getShader().uniforms.animate._location, animate);
