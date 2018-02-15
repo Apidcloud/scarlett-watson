@@ -29,10 +29,10 @@ If you want to test IBM Watson's Speech to Text service, you'll need some additi
 1. Create an account over https://www.ibm.com/watson/developer/ and generate credentials to Speec to Text service
 2. Create a `.env` file within the project folder and add the credentials through `SPEECH_TO_TEXT_USERNAME` and `SPEECH_TO_TEXT_PASSWORD` variables. 
 
-    Alternatively, you can go to `server.js` lines `33-34` and replace `<username>` and `<password>` accordingly.
+    Alternatively, you can go to `server.js` lines `34-35` and replace `<username>` and `<password>` accordingly.
 3. `$ yarn start` to run express server
 4. Open [localhost:5000](http://localhost:5000) in the browser
-5. Clicking `Analyze` button should now ask for your permission to use the microphone and render the output accordingly
+5. Clicking `Activate` button (when enabled) should now ask for your permission to use the microphone and render the output accordingly
 
 ## Heroku
 
