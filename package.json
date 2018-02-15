@@ -20,14 +20,13 @@
     "scarlett-glslify-loader": "1.0.3",
     "shebang-loader": "0.0.1",
     "watson-developer-cloud": "3.0.6",
-    "watson-speech": "0.34.1"
+    "watson-speech": "0.34.1",
+    "webpack": "4.0.0-beta.1",
+    "webpack-dev-middleware": "2.0.5"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/Apidcloud/scarlett-watson.git"
   },
-  "devDependencies": {
-    "webpack": "4.0.0-beta.1",
-    "webpack-dev-middleware": "2.0.5"
-  }
+  "devDependencies": {}
 }
