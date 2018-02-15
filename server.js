@@ -25,7 +25,8 @@ app.use(function(req, res, next) {
 });
 
 // load environment properties from a .env file (local dev only)
-// create a .env file containing SPEECH_TO_TEXT_USERNAME or other variables
+// create a .env file containing SPEECH_TO_TEXT_USERNAME and SPEECH_TO_TEXT_PASSWORD
+// or other variables
 dotenv.load({ silent: true });
 
 // For local development, specify the username and password or set env properties
