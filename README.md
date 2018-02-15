@@ -8,7 +8,7 @@
 
 Live Demos:
 - [Zeit](https://scarlett-watson.now.sh/)
-- [Heroku](https://scarlett-watson.herokuapp.com/) - might be unavaible due to free plan's 30min inactivity
+- [Heroku](https://scarlett-watson.herokuapp.com/)
 
 Both should work even in smartphones. Tested with Firefox and Google Chrome. Safari doesn't seem to handle the microphone permissions very well though.
 
