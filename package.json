@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "This repo combines IBM Watson Cloud Speech to Text service renders its output as Scarlett's WebGL Framework (MSDF) BMFont Text",
   "engines": {
-    "node": "8.6.0"
+    "node": ">=8.6.0"
   },
   "main": "server.js",
   "scripts": {
@@ -21,8 +21,8 @@
     "shebang-loader": "0.0.1",
     "watson-developer-cloud": "3.0.6",
     "watson-speech": "0.34.1",
-    "webpack": "4.0.0-beta.1",
-    "webpack-dev-middleware": "2.0.5"
+    "webpack": "4.18.0",
+    "webpack-dev-middleware": "3.3.0"
   },
   "repository": {
     "type": "git",
