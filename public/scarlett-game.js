@@ -1,9 +1,15 @@
 var CustomMSDFShader = require("./shaders/customMSDFShader");
 
-var DISPLAY_WIDTH = 1920,
-  HALF_DISPLAY_WIDTH = DISPLAY_WIDTH / 2;
-var DISPLAY_HEIGHT = 500,
-  HALF_DISPLAY_HEIGHT = DISPLAY_HEIGHT / 2;
+var DISPLAY_WIDTH = 1920;
+var DISPLAY_HEIGHT = 500;
+
+const body = document.querySelector('body');
+body.addEventListener('touchstart', (ev) => ev.preventDefault());
+body.addEventListener('contextmenu', (ev) => ev.preventDefault());
+
+const canvas = document.querySelector('canvas');
+canvas.addEventListener('touchstart', (ev) => ev.preventDefault());
+canvas.addEventListener('contextmenu', (ev) => ev.preventDefault());
 
 var Game = SC.Game;
 var GameScene = SC.GameScene;
@@ -59,6 +65,7 @@ var gl = null;
 
 gameScene.initialize = function() {
   gl = SC.GameManager.renderContext.getContext();
+  
 };
 
 async function initializeTextDependencies(fontPath) {
@@ -69,7 +76,7 @@ async function initializeTextDependencies(fontPath) {
   });
 
   if (await text.setFontPathAsync(fontPath)) {
-    text.transform.setPosition(-390, -180);
+    text.transform.setPosition(-390, -130);
     //text.setColor(Color.fromHex("#C36891FF"));
     text.setColor(Color.fromHex("#5b1928FF"));
     newText = text;
@@ -98,7 +105,7 @@ var fixed = [
   "How cool is this?",
   "Using IBM Watson's Cloud Speech to Text service",
   "and displaying its result with Scarlett's Framework MSDF Font Rendering",
-  "Click 'Activate' button and speak to your microphone!"
+  "Click on the 'Activate' button and speak to your microphone!"
 ];
 
 var btn = document.getElementById('activate-btn');
