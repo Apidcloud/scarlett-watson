@@ -26,9 +26,9 @@ This example connects directly from your browser to the IBM Watson Cloud Speech 
 
 If you want to test IBM Watson's Speech to Text service, you'll need some additional steps:
 1. Create an account over https://www.ibm.com/watson/developer/ and generate credentials to Speech to Text service
-2. Create a `.env` file within the project folder and add the credentials through `SPEECH_TO_TEXT_USERNAME` and `SPEECH_TO_TEXT_PASSWORD` variables. 
+2. Create a `.env` file within the project folder and add the credentials through `SPEECH_TO_TEXT_API_KEY` and `SPEECH_TO_TEXT_URL` variables.
 
-    Alternatively, you can go to `server.js` lines `34-35` and replace `<username>` and `<password>` accordingly.
+    Alternatively, you can go to `server.js` lines `25` and `45` and replace the values accordingly.
 3. `$ yarn start` to run express server
 4. Open [localhost:5000](http://localhost:5000) in the browser
 5. Clicking `Activate` button (when enabled) should now ask for your permission to use the microphone and render the output accordingly
