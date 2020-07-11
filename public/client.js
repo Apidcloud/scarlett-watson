@@ -10,7 +10,9 @@
 //
 // * fetch() is a modern version of XMLHttpRequest. A pollyfill is available for older browsers: https://github.com/github/fetch
 
+// keep the bundle slim by only requiring the necessary modules
 var recognizeMic = require('watson-speech/speech-to-text/recognize-microphone');
+
 var updateText = require('./scarlett-game');
 
 var btn = document.getElementById('activate-btn');
@@ -21,21 +23,19 @@ var output = document.getElementById('output');
  * @return {Promise<String>} returns a promise that resolves to a string token
  */
 function getToken() {
-  return fetch('/api/speech-to-text/token').then(function(response) {
-    console.log(response);
-    return response.text();
-  }); 
+  return fetch('/api/speech-to-text/token').then(resp => resp.json());
 }
 
-function recognizeSpeech(token) {
+function recognizeSpeech(credentials) {
+ 
   var stream = recognizeMic({
-    token: token,
+    url: credentials.url,
+    accessToken: credentials.accessToken,
     objectMode: true, // send objects instead of text
-    extractResults: true, // convert {results: [{alternatives:[...]}], result_index: 0} to {alternatives: [...], index: 0}
-    format: false // optional - performs basic formatting on the results such as capitals an periods
   });
   stream.on('data', (data) => {
-    var transcript = data.alternatives[0].transcript;
+    //console.log(data);
+    var transcript = data.results[0].alternatives[0].transcript;
     output.innerHTML = transcript;
     updateText(transcript);
   });
