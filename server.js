@@ -42,13 +42,15 @@ app.use('/api/speech-to-text/token', function(req, res) {
   return sttAuthenticator
     .requestToken()
     .then(({ result }) => {
-      res.json({ accessToken: result.access_token, refreshToken: result.refresh_token, url: process.env.SPEECH_TO_TEXT_URL });
+      res.json({ accessToken: result.access_token, url: process.env.SPEECH_TO_TEXT_URL });
     })
     .catch(console.error);
 });
 
-var port = process.env.PORT || process.env.VCAP_APP_PORT || 5000;
-app.listen(port, function() {
-  console.log('Node app is running on port', port);
-});
+//var port = process.env.PORT || process.env.VCAP_APP_PORT || 5000;
+//app.listen(port, function() {
+//  console.log('Node app is running on port', port);
+//});
 
+// just export the app instead of starting up the server
+module.exports = app;
