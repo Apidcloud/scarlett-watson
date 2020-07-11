@@ -6,8 +6,7 @@
 ![with-water](https://img.shields.io/badge/made%20with-%F0%9F%92%A7%20water-blue.svg)
 ![with-love](https://img.shields.io/badge/made%20with-%F0%9F%92%8C-red.svg)
 
-Live Demos:
-- [Zeit](https://scarlett-watson.now.sh/)
+Live Demo:
 - [Heroku](https://scarlett-watson.herokuapp.com/)
 
 Both should work even in smartphones. Tested with Firefox and Google Chrome. Safari doesn't seem to handle the microphone permissions very well though.
@@ -16,7 +15,7 @@ This example connects directly from your browser to the IBM Watson Cloud Speech 
 
 ## Basic Setup (without Speech to Text)
 
-1. Install NodeJS (8.x or higher is recommended)
+1. Install NodeJS (10.x or higher)
 2. Fork and clone the repo
 3. Install Yarn globally with `$ npm i -g yarn` or download it at their [website](https://yarnpkg.com/en/docs/install)
 4. `$ yarn` in the repo directory to install dependencies
@@ -39,7 +38,7 @@ If you want to test IBM Watson's Speech to Text service, you'll need some additi
 You can also use Heroku to run the app, and setting it up is pretty straightforward:
 1. Create an account over [Heroku](https://www.heroku.com)
 2. Download and install Heroku's [CLI](https://devcenter.heroku.com/articles/heroku-cli#download-and-install)
-3. Run `$ heroku auth:login` and enter your account credentials
+3. Run `$ heroku login -i` and enter your account credentials
 4. Create an heroku app `$ heroku create`
 5. Run it locally `$ heroku local web`
 6. Open the app with `$ heroku open` or [localhost:5000](http://localhost:5000) in the browser
