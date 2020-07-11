@@ -47,10 +47,8 @@ app.use('/api/speech-to-text/token', function(req, res) {
     .catch(console.error);
 });
 
-//var port = process.env.PORT || process.env.VCAP_APP_PORT || 5000;
-//app.listen(port, function() {
-//  console.log('Node app is running on port', port);
-//});
+var port = process.env.PORT || process.env.VCAP_APP_PORT || 5000;
+app.listen(port, function() {
+  console.log('Node app is running on port', port);
+});
 
-// just export the app instead of starting up the server
-module.exports = app;

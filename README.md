@@ -26,7 +26,7 @@ This example connects directly from your browser to the IBM Watson Cloud Speech 
 ## IBM Watson Cloud Speech to Text
 
 If you want to test IBM Watson's Speech to Text service, you'll need some additional steps:
-1. Create an account over https://www.ibm.com/watson/developer/ and generate credentials to Speec to Text service
+1. Create an account over https://www.ibm.com/watson/developer/ and generate credentials to Speech to Text service
 2. Create a `.env` file within the project folder and add the credentials through `SPEECH_TO_TEXT_USERNAME` and `SPEECH_TO_TEXT_PASSWORD` variables. 
 
     Alternatively, you can go to `server.js` lines `34-35` and replace `<username>` and `<password>` accordingly.
