@@ -7,7 +7,8 @@
   },
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node ./api/server.js",
+    "build": "webpack"
   },
   "author": "Apidcloud <luisapidcloud@hotmail.com>",
   "license": "MIT",
@@ -28,5 +29,7 @@
     "type": "git",
     "url": "https://github.com/Apidcloud/scarlett-watson.git"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "webpack-cli": "3.3.0"
+  }
 }

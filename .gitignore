@@ -1,4 +1,6 @@
 build
+public/bundle.js
+public/bundle.js.map
 .opt-in
 .opt-out
 .env

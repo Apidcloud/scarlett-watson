@@ -1,10 +1,12 @@
 'use strict';
+const path = require("path");
 
 module.exports = {
   mode: "production",
   devtool: 'source-map',
   entry: './public/client.js',
   output: {
+    path: path.resolve('public'),
     filename: 'bundle.js'
   },
   // http://webpack.github.io/docs/configuration.html#node
