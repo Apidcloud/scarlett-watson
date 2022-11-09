@@ -4,13 +4,6 @@ var app = express();
 var dotenv = require('dotenv');
 const { IamTokenManager } = require('ibm-watson/auth');
 
-// bundle the code
-/* var webpackDevMiddleware = require('webpack-dev-middleware');
-var webpack = require('webpack');
-var webpackConfig = require('./webpack.config');
-
-var compiler = webpack(webpackConfig); */
-
 // load environment properties from a .env file (local dev only)
 // create a .env file containing SPEECH_TO_TEXT_API_KEY and SPEECH_TO_TEXT_URL
 // or other variables
@@ -25,13 +18,6 @@ const sttAuthenticator = new IamTokenManager({
   apikey: process.env.SPEECH_TO_TEXT_API_KEY || '{apikey}'
 });
 
-/* app.use(
-  webpackDevMiddleware(compiler, {
-    publicPath: '/' // Same as `output.publicPath` in most cases.
-  })
-); */
-
-//app.use(express.static(__dirname + '/public'));
 app.use(function(req, res, next) {
   res.header("Content-Security-Policy", "font-src 'self' data:");
   res.setHeader('Cache-Control', 's-max-age=1, stale-while-revalidate');

@@ -7,9 +7,9 @@
 ![with-love](https://img.shields.io/badge/made%20with-%F0%9F%92%8C-red.svg)
 
 Live Demo:
-- [Heroku](https://scarlett-watson.herokuapp.com/)
+- [Vercel](https://scarlett-watson.vercel.app/)
 
-Both should work even in smartphones. Tested with Firefox and Google Chrome. Safari doesn't seem to handle the microphone permissions very well though.
+Should work even in smartphones. Tested with Firefox and Google Chrome. Safari doesn't seem to handle the microphone permissions very well though.
 
 This example connects directly from your browser to the IBM Watson Cloud Speech to Text service and shows its output with [Scarlett's WebGL Framework](https://github.com/scarlettgamestudio/scarlett-framework) (MSDF) BMFont Text Rendering. 
 
@@ -19,6 +19,7 @@ This example connects directly from your browser to the IBM Watson Cloud Speech 
 2. Fork and clone the repo
 3. Install Yarn globally with `$ npm i -g yarn` or download it at their [website](https://yarnpkg.com/en/docs/install)
 4. `$ yarn` in the repo directory to install dependencies
+5. `$ yarn build` to bundle code
 5. `$ yarn start` to run express server
 6. Open [localhost:5000](http://localhost:5000) in the browser
 
@@ -32,16 +33,6 @@ If you want to test IBM Watson's Speech to Text service, you'll need some additi
 3. `$ yarn start` to run express server
 4. Open [localhost:5000](http://localhost:5000) in the browser
 5. Clicking `Activate` button (when enabled) should now ask for your permission to use the microphone and render the output accordingly
-
-## Heroku
-
-You can also use Heroku to run the app, and setting it up is pretty straightforward:
-1. Create an account over [Heroku](https://www.heroku.com)
-2. Download and install Heroku's [CLI](https://devcenter.heroku.com/articles/heroku-cli#download-and-install)
-3. Run `$ heroku login -i` and enter your account credentials
-4. Create an heroku app `$ heroku create`
-5. Run it locally `$ heroku local web`
-6. Open the app with `$ heroku open` or [localhost:5000](http://localhost:5000) in the browser
 
 ## Credits
 
