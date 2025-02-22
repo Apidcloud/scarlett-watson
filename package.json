@@ -3,7 +3,7 @@
   "version": "1.0.1",
   "description": "This repo combines IBM Watson Cloud Speech to Text service renders its output as Scarlett's WebGL Framework (MSDF) BMFont Text",
   "engines": {
-    "node": ">=22"
+    "node": "22.x"
   },
   "main": "api/index.js",
   "scripts": {

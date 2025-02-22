@@ -15,7 +15,7 @@ This example connects directly from your browser to the IBM Watson Cloud Speech 
 
 ## Basic Setup (without Speech to Text)
 
-1. Install NodeJS (22.x or higher)
+1. Install NodeJS (22.x)
 2. Fork and clone the repo
 3. Install Yarn globally with `$ npm i -g yarn` or download it at their [website](https://yarnpkg.com/en/docs/install)
 4. `$ yarn` in the repo directory to install dependencies
