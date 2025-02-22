@@ -1,20 +1,28 @@
 'use strict';
 const path = require("path");
+const webpack = require("webpack");
 
 module.exports = {
   mode: "production",
   devtool: 'source-map',
   entry: './public/client.js',
   output: {
-    path: path.resolve('public'),
+    path: path.resolve(__dirname, 'public'),
     filename: 'bundle.js'
   },
-  // http://webpack.github.io/docs/configuration.html#node
-  node: {
-    fs: 'empty',
-    net: 'empty',
-    tls: 'empty'
+  resolve: {
+    fallback: {
+      fs: false,
+      net: false,
+      tls: false,
+    }
   },
+  plugins: [
+    new webpack.ProvidePlugin({
+      Buffer: ['buffer', 'Buffer'],
+      process: 'process/browser'
+    }),
+  ],
   module: {
     rules: [
       {
@@ -23,12 +31,12 @@ module.exports = {
       },
       {
         test: /\.(glsl|frag|vert)$/,
-        loader: 'raw-loader',
+        use: 'raw-loader',
         exclude: /node_modules/
       },
       {
         test: /\.(glsl|frag|vert)$/,
-        loader: 'scarlett-glslify-loader',
+        use: 'scarlett-glslify-loader',
         exclude: /node_modules/
       }
     ]

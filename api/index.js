@@ -19,6 +19,7 @@ const sttAuthenticator = new IamTokenManager({
 });
 
 app.use(express.static(__dirname + '/../public'));
+
 app.use(function (req, res, next) {
   res.header("Content-Security-Policy", "font-src 'self' data:");
   res.setHeader('Cache-Control', 's-max-age=1, stale-while-revalidate');

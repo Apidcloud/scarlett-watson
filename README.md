@@ -9,13 +9,13 @@
 Live Demo:
 - [Vercel](https://scarlett-watson.vercel.app/)
 
-Should work even in smartphones. Tested with Firefox and Google Chrome. Safari doesn't seem to handle the microphone permissions very well though.
+Should work even in smartphones. Tested with Firefox, Chromium-based browsers (Chrome and Brave), and Safari.
 
 This example connects directly from your browser to the IBM Watson Cloud Speech to Text service and shows its output with [Scarlett's WebGL Framework](https://github.com/scarlettgamestudio/scarlett-framework) (MSDF) BMFont Text Rendering. 
 
 ## Basic Setup (without Speech to Text)
 
-1. Install NodeJS (10.x or higher)
+1. Install NodeJS (22.x or higher)
 2. Fork and clone the repo
 3. Install Yarn globally with `$ npm i -g yarn` or download it at their [website](https://yarnpkg.com/en/docs/install)
 4. `$ yarn` in the repo directory to install dependencies
@@ -29,10 +29,10 @@ If you want to test IBM Watson's Speech to Text service, you'll need some additi
 1. Create an account over https://www.ibm.com/watson/developer/ and generate credentials to Speech to Text service
 2. Create a `.env` file within the project folder and add the credentials through `SPEECH_TO_TEXT_API_KEY` and `SPEECH_TO_TEXT_URL` variables.
 
-    Alternatively, you can go to `server.js` lines `25` and `45` and replace the values accordingly.
+    Alternatively, you can go to `api/index.js` and replace the values accordingly.
 3. `$ yarn start` to run express server
 4. Open [localhost:4000](http://localhost:4000) in the browser
-5. Clicking `Activate` button (when enabled) should now ask for your permission to use the microphone and render the output accordingly
+5. Clicking `Activate` button (when enabled) should now ask for your permission to use the microphone and render the output accordingly.
 
 ## Credits
 

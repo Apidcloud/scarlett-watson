@@ -1,6 +1,7 @@
 build
 public/bundle.js
 public/bundle.js.map
+public/bundle.js.LICENSE.txt
 .opt-in
 .opt-out
 .env
