@@ -18,14 +18,15 @@ const sttAuthenticator = new IamTokenManager({
   apikey: process.env.SPEECH_TO_TEXT_API_KEY || '{apikey}'
 });
 
-app.use(function(req, res, next) {
+app.use(express.static(__dirname + '/../public'));
+app.use(function (req, res, next) {
   res.header("Content-Security-Policy", "font-src 'self' data:");
   res.setHeader('Cache-Control', 's-max-age=1, stale-while-revalidate');
   next();
 });
 
 // speech to text token endpoint
-app.use('/api/speech-to-text/token', function(req, res) {
+app.use('/api/speech-to-text/token', function (req, res) {
   return sttAuthenticator
     .requestToken()
     .then(({ result }) => {
@@ -34,8 +35,8 @@ app.use('/api/speech-to-text/token', function(req, res) {
     .catch(console.error);
 });
 
-var port = process.env.PORT || process.env.VCAP_APP_PORT || 5000;
-app.listen(port, function() {
+var port = process.env.PORT || process.env.VCAP_APP_PORT || 4000;
+app.listen(port, function () {
   console.log('Node app is running on port', port);
 });
 
